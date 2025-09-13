@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>thankyou</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .data-box {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #eef;
+            width: 300px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>thankyou!</h1>
+    <div class="data-box" id="displayData"></div>
+    <script>
+        let formData = JSON.parse(localStorage.getItem("formData"));
+        if (formData) {
+          let display = `
+            <p><b>name:</b> ${formData.name}</p>
+            <p><b>address:</b> ${formData.address}</p>
+            <p><b>contact:</b> ${formData.contact}</p>
+            <p><b>birthdate:</b> ${formData.birthdate}</p>
+            <p><b>age:</b> ${formData.age}</p>
+            <p><b>hobbies:</b> ${formData.hobbies.join(",")}</p>
+            `;
+           document.getElementById("displahyData").innerHTML = display;
+        }
+    </script>
+</body>
+</html>
